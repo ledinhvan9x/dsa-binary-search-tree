@@ -10,7 +10,7 @@ const findWithRecursive = (node, target) => {
     if (node === null) return false
     let curr = node
     if (curr.value === target) return true
-        return findWithRecursive(curr.value > target ? curr.left : curr.right, target)
+    return findWithRecursive(curr.value > target ? curr.left : curr.right, target)
 }
 
 const find = (node, target) => {
@@ -21,11 +21,8 @@ const find = (node, target) => {
     while (curr !== null) {
     if (curr.value === target) {
         return true
-    } else if (curr.value > target) {
-        curr = curr.left
-    } else {
-        curr = curr.right
     }
+    curr = curr.value > target ? curr.left : curr.right
     }
     return false
 }
